@@ -18,10 +18,10 @@ sheet.cell(row=5, column=2).value = employee_name
 sheet.cell(row=6, column=2).value = employee_num
 sheet.cell(row=7, column=2).value = expenses_date
 
-# Insert starting at row 18 (D18 = column 4, row 18)
+# Insert starting at row 10 (A10 = column 1, row 10)
 for i, row in enumerate(rows):
     for j, value in enumerate(row):
-        cell = sheet.cell(row=10+i, column=1+j)  # D18 onwards
+        cell = sheet.cell(row=10+i, column=1+j)
         try:
             cell.value = float(value)
         except:

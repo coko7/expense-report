@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir data
+[[ ! -d 'data' ]] && mkdir data
 
 python -m venv '.invoice2data-venv' \
     && source .invoice2data-venv/bin/activate \
