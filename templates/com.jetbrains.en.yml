@@ -1,0 +1,23 @@
+issuer: JetBrains
+fields:
+  amount: Total:\s*([\d.,]+)\s*EUR
+  static_amount_vat: 0
+  invoice_number: Reference number:\s*(INVCZ\d+)
+  order_reference: Order reference:\s*([A-Z0-9]+)
+  tax_point_date: Tax point date:\s*([\d.]+)
+  due_date: Due date:\s*([\d.]+)
+  date: Due date:\s*([\d.]+)
+  payment_method: Paid via:\s*(\w+)
+  transaction: Transaction:\s*([A-Z0-9]+)
+  vat_id: VAT ID:\s([A-Z0-9]+)
+  paid: PAID:\s*([\d.,]+)\s*EUR
+  static_description: 'JetBrains Rider dotUltimate Subscription'
+keywords:
+  - JetBrains
+  - jetbrains.com
+  - EUR
+options:
+  currency: EUR
+  date_formats:
+    - '%d/%m/%Y'
+  decimal_separator: '.'

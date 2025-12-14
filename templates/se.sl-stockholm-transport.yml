@@ -1,0 +1,18 @@
+issuer: SL Stockholm
+fields:
+  amount: Totalt\s+([\d]+,\d{2})\sSEK
+  static_amount_vat: 0
+  date: (\d{4}-\d{2}-\d{2})
+  invoice_number: Ordernr:\s+([\d]+)
+  ticket_number: Kvittonr:\s+([\d]+)
+  static_vat: 'SE556013068301'
+  static_description: 'SL Ticket'
+keywords:
+  - Kvitto
+  - SEK
+  - SL Kundtjänst
+options:
+  currency: SEK
+  date_formats:
+    - '%d %B %Y'
+  decimal_separator: ','

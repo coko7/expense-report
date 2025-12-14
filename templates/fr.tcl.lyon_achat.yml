@@ -1,0 +1,18 @@
+issuer: TCL Lyon
+fields:
+  amount: Montant TTC\s+(\d+\.\d{2})\sEUR
+  static_amount_vat: 0
+  amount_untaxed: Taux\sTVA\s*([\d]+.\d{2})\sEUR
+  static_invoice_number: 'NULL_0123456789'
+  date: (\d{2}\/\d{2}\/\d{4})
+  static_description: 'Public Transport TCL'
+keywords:
+  - Attestation d'achat
+  - TCL
+  - Transports en Commun Lyonnais
+  - Lyon
+options:
+  currency: EUR
+  date_formats:
+    - '%d/%m/%Y'
+  decimal_separator: '.'

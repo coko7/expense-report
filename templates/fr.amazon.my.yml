@@ -1,0 +1,18 @@
+issuer: Amazon France
+fields:
+  amount: Facture Total\s+([\d ]+,\d{2})
+  static_amount_vat: 0
+  amount_untaxed: Total\s+([\d ]+,\d{2})\s€\s+[\d ]+,\d{2}\s€
+  date: Date.*\s(\d{1,2}\s+[A-Za-zéû0-9]+\s+\d{4}|\d{2}\.\d{2}\.\d{4})
+  invoice_number: Numéro de la facture\s+([\w-]+)
+  static_vat: LU20260743
+  static_description: 'Amazon order'
+keywords:
+  - Amazon EU S.a.r.L.
+  - €
+  - Facture
+options:
+  currency: EUR
+  date_formats:
+    - '%d %B %Y'
+  decimal_separator: ','

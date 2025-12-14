@@ -1,0 +1,17 @@
+issuer: Uber
+fields:
+  amount: Montant total à payer\s+([\d]+,\d{2})\s€
+  static_amount_vat: 0
+  date: Date de facturation:\s+(\d{1,2}\s[a-zA-Z.éû]+\s\d{4})
+  invoice_number: Numéro de facture:\s+([A-Z0-9-]+)
+  static_vat: 'FR12909460651'
+  static_description: 'Uber trip'
+keywords:
+  - Uber B.V.
+  - Facture
+  - €
+options:
+  currency: EUR
+  date_formats:
+    - '%d %B %Y'
+  decimal_separator: ','

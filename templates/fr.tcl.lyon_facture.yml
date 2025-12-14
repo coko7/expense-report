@@ -1,0 +1,18 @@
+issuer: TCL Lyon
+fields:
+  amount: Total TTC EUR\s*([\d,]+)
+  static_amount_vat: 0
+  amount_untaxed: Total HT\s*([\d,]+)
+  invoice_number: Facture n°\s*(FAC_[A-Z0-9_]+)
+  date: Lyon, le\s*([\d\/]+)
+  static_description: 'Public Transport TCL'
+keywords:
+  - Facture
+  - TCL
+  - Transports en Commun Lyonnais
+  - Lyon
+options:
+  currency: EUR
+  date_formats:
+    - '%d/%m/%Y'
+  decimal_separator: ','
