@@ -31,6 +31,8 @@ for invoice_file in $(fd . -e pdf "$INVOICES_DIR"); do
     fi
 
     invoice2data "$invoice_file" \
+        --debug \
+        --input-reader pdftotext \
         --template-folder "$TEMPLATES_DIR" --exclude-built-in-templates \
         --output-format json --output-name "$TMP_OUTPUT_FILE"
 

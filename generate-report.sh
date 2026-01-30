@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+[[ ! -f ".invoice2data-venv/bin/activate" ]] && echo "missing python venv" && exit 1
+
+source .invoice2data-venv/bin/activate
+
 # xlsx_file='expenses.xlsx'
 json_file='data/parsed_data.json'
 temp_csv='data/temp.csv'
