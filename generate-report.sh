@@ -40,6 +40,10 @@ jq -r '
         (.vat_sek // empty | tonumber)
     ] | @csv
 ' "$json_file" > "$temp_csv"
+if [[ $? -ne 0 ]]; then
+    echo "jq to csv failed. exiting..."
+    exit 1
+fi
 
 EXPENSES_TEMPLATE="expenses_template.xlsx"
 expense_file="data/expense_${employee_name}_${month_date}.xlsx"
