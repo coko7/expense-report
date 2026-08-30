@@ -21,4 +21,4 @@ $PYTHON_BIN -m venv "$VENV_NAME"
 source "$VENV_NAME/bin/activate"
 
 # pip install --upgrade pip setuptools wheel
-pip install invoice2data openpyxl
+pip install invoice2data openpyxl dateparser
