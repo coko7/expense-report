@@ -1,0 +1,16 @@
+issuer: Uber Germany
+fields:
+  amount: Gesamtbetrag\s+([\d]+,\d{2})\s€
+  vat_amount: Gesamtbetrag USt\s+\d+%\s+([\d]+,\d{2})\s€
+  date: Rechnungsdatum:\s+(\d{2}\.\d{2}\.\d{4})
+  invoice_number: Rechnungsnummer:\s+([A-Z0-9-]+)
+  static_description: 'Uber trip'
+keywords:
+  - Uber B.V.
+  - Rechnung
+  - €
+options:
+  currency: EUR
+  date_formats:
+    - '%d.%m.%Y'
+  decimal_separator: ','

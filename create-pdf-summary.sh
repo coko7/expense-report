@@ -6,6 +6,9 @@ expenses_date="$1"
 employee_id="$2"
 [[ -z "$employee_id" ]] && { echo "employee ID expected: foo1377"; exit 1; }
 
+page="${3:-first}"
+[[ "$page" != "first" && "$page" != "last" ]] && { echo "page must be 'first' or 'last', got: $page"; exit 1; }
+
 INVOICES_DIR="data/invoices"
 TARGET_DIR="target/pdf-extracts"
 
@@ -20,10 +23,16 @@ fi
 for pdf in $(fd . -e pdf "$INVOICES_DIR"); do
     echo "Parsing: $pdf"
     filename=$(basename "$pdf" .pdf)
-    pdfseparate -f 1 -l 1 "$pdf" "$TARGET_DIR/$filename-%d-first.pdf"
+    if [[ "$page" == "first" ]]; then
+        page_num=1
+    else
+        page_num=$(pdfinfo "$pdf" | awk '/^Pages:/ {print $2}')
+    fi
+    pdfseparate -f "$page_num" -l "$page_num" "$pdf" "$TARGET_DIR/$filename-%d-$page.pdf"
+    [[ ! -f "$TARGET_DIR/$filename-$page_num-$page.pdf" ]] && { echo "✗ failed to extract page from: $pdf"; exit 1; }
 done
 
 final_pdf="all-invoices_${employee_id}_${expenses_date}.pdf"
-pdfunite $TARGET_DIR/*-first.pdf "$TARGET_DIR/$final_pdf"
+pdfunite $TARGET_DIR/*-$page.pdf "$TARGET_DIR/$final_pdf"
 
-rm $TARGET_DIR/*-first.pdf
+rm $TARGET_DIR/*-$page.pdf

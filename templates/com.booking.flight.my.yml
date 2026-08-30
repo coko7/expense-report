@@ -1,0 +1,16 @@
+issuer: Booking.com Flight
+fields:
+  amount: Total\s+EUR ([\d.]+)
+  static_amount_vat: 0
+  date: (\w{3}, \w{3} \d{1,2})
+  invoice_number: Customer reference:\s+([\d-]+)
+  static_description: 'Booking.com Flight'
+keywords:
+  - Customer reference
+  - Norwegian Air Sweden
+  - Booking reference
+options:
+  currency: EUR
+  date_formats:
+    - '%a, %b %d'
+  decimal_separator: '.'

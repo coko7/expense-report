@@ -1,0 +1,15 @@
+issuer: ApartDirect
+fields:
+  amount: Total:\s+[\d.]+\s+[\d.]+\s+([\d.]+)
+  vat_amount: Total:\s+[\d.]+\s+([\d.]+)\s+[\d.]+
+  date: Date:\s+(\d{1,2} \w+ \d{4})
+  invoice_number: Reservation no:\s+(\d+)
+  static_description: 'ApartDirect Accommodation'
+keywords:
+  - ApartDirect
+  - Reservation no
+options:
+  currency: SEK
+  date_formats:
+    - '%d %B %Y'
+  decimal_separator: '.'

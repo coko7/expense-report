@@ -1,0 +1,18 @@
+issuer: Uber Sweden
+fields:
+  amount: Totalt belopp att betala\s+([\d,]+)\s+kr
+  vat_amount: Totalt Moms\s+\d+%\s+([\d,]+)\s+kr
+  date: Fakturadatum:\s+(\d{1,2} [\w.]+ \d{4})
+  invoice_number: Fakturanummer:\s+([A-Z0-9-]+)
+  static_description: 'Uber trip'
+keywords:
+  - Uber B.V.
+  - Faktura
+  - kr
+options:
+  currency: SEK
+  date_formats:
+    - '%d %B %Y'
+  languages:
+    - sv
+  decimal_separator: ','

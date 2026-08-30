@@ -1,0 +1,16 @@
+issuer: Bolt
+fields:
+  amount: Facturé\s+.+?:\s+([\d.]+)
+  vat_amount: TVA \d+%:\s+([\d.]+)
+  date: Date:\s+(\d{2}/\d{2}/\d{4})
+  invoice_number: N° de facture\s+([A-Z0-9-]+)
+  static_description: 'Bolt trip'
+keywords:
+  - Bolt Operations
+  - facture
+  - EUR
+options:
+  currency: EUR
+  date_formats:
+    - '%d/%m/%Y'
+  decimal_separator: '.'
